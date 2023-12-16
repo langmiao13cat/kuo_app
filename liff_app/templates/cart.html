@@ -1,0 +1,55 @@
+<!--C:\Users\jerem\Desktop\addcat\liff_app\templates\cart.html-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>購物車</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <h1>購物車</h1>
+    <ul>
+        <!-- List items in cart -->
+        {% for item, quantity in cart.items %}
+            <li id="cart-item-{{ item.product_id }}">
+                {{ item.name }} - 數量:
+                <input type="number" name="quantity" value="{{ quantity }}" min="1" id="quantity-{{ item.product_id }}">
+                <button type="button" onclick="updateCartQuantity('{{ item.product_id }}')">更新數量</button>
+                <a href="{{ url_for('remove_from_cart', product_id=item.product_id) }}">刪除商品</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <p>總金額: {{ cart.total_price() }}元</p>
+
+    <!-- Form for submitting order -->
+    <form action="{{ url_for('submit_order') }}" method="post" id="orderForm">
+        <input type="text" name="name" placeholder="收件人姓名" required>
+        <input type="text" name="contact" placeholder="聯絡方式" required>
+        <!-- Delivery method selection -->
+        <div>
+            <p>選擇配送方式:</p>
+            <input type="radio" id="deliveryHome" name="delivery" value="宅配到府" onclick="updateDeliveryMethod()" checked>
+            <label for="deliveryHome">宅配到府</label><br>
+            <input type="radio" id="deliveryStore" name="delivery" value="超商取貨" onclick="updateDeliveryMethod()">
+            <label for="deliveryStore">超商取貨</label><br>
+            <input type="radio" id="deliveryMarket" name="delivery" value="市場自取" onclick="updateDeliveryMethod()">
+            <label for="deliveryMarket">市場自取</label><br>
+        </div>
+        <div id="addressField" style="display:block;">
+            <input type="text" name="address" placeholder="收件地址">
+        </div>
+        <div id="storeField" style="display:none;">
+            <input type="text" name="storeName" placeholder="收件門市名稱">
+        </div>
+        <div id="marketField" style="display:none;">
+            <select name="marketPickup">
+                <option value="復國市場">復國市場</option>
+                <option value="尚青市場">尚青市場</option>
+            </select>
+        </div>
+        <input type="submit" value="提交訂單">
+    </form>
+    <a href="{{ url_for('index') }}">繼續購物</a>
+    <a href="{{ url_for('clear_cart') }}">清空購物車</a>
+</body>
+</html>

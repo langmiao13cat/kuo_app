@@ -1,0 +1,163 @@
+/* style.css */
+/* 設定全站基本樣式 */
+/* 導航條樣式 */
+nav ul {
+    width: 100%; /* 使列表充滿導航條寬度 */
+    list-style: none; /* 移除列表標記 */
+    padding: 0; /* 移除內邊距 */
+    margin: 0; /* 移除外邊距 */
+    display: flex; /* 使用彈性盒子模型 */
+    justify-content: center; /* 水平置中 */
+    flex-wrap: wrap; /* 允許多行顯示 */
+}
+
+
+nav ul li {
+    padding: 5px; /* 設定列表項目內邊距 */
+}
+
+nav ul li:last-child {
+    margin-right: 0; /* 最後一個列表項目不設定間距 */
+}
+
+nav a {
+    text-decoration: none; /* 移除超連結底線 */
+    color: #333; /* 設定超連結顏色 */
+}
+
+/* 導航條樣式調整 */
+nav {
+    background-color: #4CAF50; /* 設定背景色為綠色 */
+    padding: 10px 0; /* 上下內邊距 */
+    width: 100%; /* 使導航條充滿整個頁面寬度 */
+    box-sizing: border-box; /* 確保寬度包括內邊距和邊框 */
+}
+
+
+/* 圖片尺寸調整 */
+.category-card img, li img {
+    max-width: 500px; /* 將圖片最大寬度增加到 500px */
+}
+
+
+/* 針對商品列表中的圖片進行特別調整 */
+li img {
+    max-width: 100%; /* 保持設定最大寬度為容器寬度 */
+    height: auto; /* 高度自動調整 */
+    display: block; /* 使圖片獨佔一行 */
+    margin: 10px auto; /* 上下邊距 10px, 水平置中 */
+}
+
+/* 圖片優化顯示 */
+img {
+    max-width: 100%; /* 設定最大寬度為 100% */
+    height: auto; /* 高度自動調整，保持圖片比例 */
+    display: block; /* 使圖片獨佔一行 */
+    margin: 0 auto; /* 水平置中 */
+}
+
+
+body {
+    font-family: Arial, sans-serif; /* 字體設定為 Arial 和無襯線字體 */
+    margin: 0; /* 移除外邊距 */
+    padding: 0; /* 移除內邊距 */
+    background-color: #f4f4f4; /* 設定背景顏色為淺灰色 */
+}
+h1, h2 {
+    color: #333; /* 標題 h1 和 h2 文字顏色設定為深灰色 */
+}
+ul {
+    list-style: none; /* 移除列表點 */
+    padding: 0; /* 移除列表內邊距 */
+}
+li {
+    background-color: white; /* 設定列表項目背景色為白色 */
+    margin: 10px 0; /* 設定上下外邊距為 10px */
+    padding: 10px; /* 設定內邊距為 10px */
+    border-radius: 8px; /* 設定邊框圓角 */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* 設定盒子陰影 */
+}
+img {
+    max-width: 100px; /* 圖片最大寬度限制為 100px */
+    height: auto; /* 圖片高度自動調整 */
+}
+button {
+    background-color: #4CAF50; /* 設定按鈕背景色 */
+    color: white; /* 設定文字顏色為白色 */
+    border: none; /* 移除邊框 */
+    padding: 10px 15px; /* 設定內邊距 */
+    text-align: center; /* 文字置中 */
+    text-decoration: none; /* 移除文字裝飾 */
+    display: inline-block; /* 設定為內聯塊元素 */
+    font-size: 16px; /* 文字大小 */
+    margin: 4px 2px; /* 設定外邊距 */
+    border-radius: 4px; /* 邊框圓角 */
+    cursor: pointer; /* 鼠標指標變為手指形狀 */
+}
+input[type='number'], input[type='text'] {
+    padding: 5px; /* 內邊距設定為 5px */
+    margin: 5px; /* 外邊距設定為 5px */
+    border: 1px solid #ddd; /* 邊框設定為 1px 實線，顏色淺灰 */
+    border-radius: 4px; /* 邊框圓角設定為 4px */
+}
+
+/* 樣式針對特定的分類容器和卡片 */
+.category-container {
+    display: flex; /* 使用 Flexbox 佈局 */
+    flex-wrap: wrap; /* 允許元素換行 */
+    justify-content: space-around; /* 水平間隔均勻分布 */
+}
+.category-card {
+    margin: 10px; /* 外邊距 */
+    padding: 20px; /* 內邊距 */
+    background: #fff; /* 背景色為白色 */
+    border-radius: 5px; /* 邊框圓角 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 盒子陰影 */
+    text-align: center; /* 文字置中 */
+}
+.category-card img {
+    max-width: 100%; /* 圖片最大寬度調整為 100% */
+    height: auto; /* 高度自動 */
+    border-radius: 5px; /* 圖片邊框圓角 */
+}
+.category-card h3 {
+    margin-top: 10px; /* 上邊距 */
+    color: #333; /* 文字顏色 */
+    text-align: center; /* 文字置中 */
+}
+
+/* 樣式針對全螢幕容器 */
+body {
+    font-family: 'Arial', sans-serif; /* 字體設定 */
+    margin: 0; /* 移除外邊距 */
+    padding: 0; /* 移除內邊距 */
+    display: flex; /* 使用 Flexbox 佈局 */
+    flex-direction: column; /* 方向設為垂直 */
+    justify-content: center; /* 垂直居中 */
+    align-items: center; /* 水平居中 */
+    min-height: 100vh; /* 最小高度設為視窗高度 */
+    background-color: #f5f5f5; /* 背景色 */
+}
+.container {
+    width: 80%; /* 寬度設為 80% */
+    max-width: 600px; /* 最大寬度限制 */
+    text-align: center; /* 文字置中 */
+    background-color: #fff; /* 背景色 */
+    padding: 20px; /* 內邊距 */
+    margin: 10px; /* 外邊距 */
+    border-radius: 10px; /* 邊框圓角 */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 盒子陰影 */
+}
+h1 {
+    color: #333; /* 標題顏色 */
+    font-weight: bold; /* 字體加粗 */
+}
+ul {
+    list-style: none; /* 移除列表點 */
+    padding: 0; /* 移除內邊距 */
+}
+li {
+    margin-bottom: 10px; /* 底部外邊距 */
+    font-weight: bold; /* 文字加粗 */
+    color: #555; /* 文字顏色 */
+}

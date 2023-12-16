@@ -1,0 +1,27 @@
+<!--C:\Users\jerem\Desktop\addcat\liff_app\templates\order_confirmation.html-->
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <title>訂單確認</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>訂單確認</h1>
+    <p>訂單詳細資訊:</p>
+    <ul>
+        <li>姓名: {{ order_params['name'] }}</li>
+        <li>聯絡方式: {{ order_params['contact'] }}</li>
+        <li>送貨方式: {{ order_params['delivery_method'] }}</li>
+        <li>地址: {{ order_params['address'] }}</li>
+        <li>自取店名: {{ order_params['store_name'] }}</li>
+        <li>市場自取: {{ order_params['market_pickup'] }}</li>
+    </ul>
+    <h2>訂單內容:</h2>
+    <ul>
+        {% for item in cart_items %}
+            <li>{{ item.name }} - 數量: {{ item.quantity }} - 單價: {{ item.price }}元</li>
+        {% endfor %}
+    </ul>
+    <p>總價格: {{ total_price }}元</p>
+</body>
+</html>
